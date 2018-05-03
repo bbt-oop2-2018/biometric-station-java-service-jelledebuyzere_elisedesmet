@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/javaserialportcomm/SerialData.java</file>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/biometric/station/java/functionality/BiometricStationJavaFunctionality.java</file>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/javaserialportcomm/SerialPortLineListener.java</file>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/mqttservice/IMqttMessageHandler.java</file>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/mqttservice/Service.java</file>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/biometric/station/java/functionality/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/Biometric-station-java-functionality/src/javaserialportcomm/SerialLineReceiver.java</file>
+            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/BiometricStation/src/biometricstationjava/BiometricStationJavaFunctionality.java</file>
+            <file>file:/C:/Users/jelle/OneDrive/Documenten/NetBeansProjects/BiometricStation/src/biometricstationjava/FXMLDocumentController.java</file>
         </group>
     </open-files>
 </project-private>
