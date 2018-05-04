@@ -10,6 +10,7 @@ package biometricstationjava;
  * @author jelle
  */
 public class SensorData {
+
     private double tempData;
     private int hearbeat;
     private double acc_X;
@@ -46,8 +47,9 @@ public class SensorData {
 
     @Override
     public String toString() {
-        return "SensorData{" + "tempData=" + tempData + '}';
+        return "SensorData{" + "tempData=" + tempData + ", hearbeat=" + hearbeat + ", acc_X=" + acc_X + '}';
     }
     
     
+
 }
