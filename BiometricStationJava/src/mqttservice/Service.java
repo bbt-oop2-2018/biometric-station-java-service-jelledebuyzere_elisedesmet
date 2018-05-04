@@ -31,7 +31,7 @@ public class Service implements MqttCallback {
     private MqttConnectOptions connectionOptions;
     private IMqttMessageHandler messageHandler = null;
 
-    private final String BASE_TOPIC = "BiometricStation";
+    private final String BASE_TOPIC = "topic/biometricstation";
     private String channelName;
     private String channelTopic;
 
