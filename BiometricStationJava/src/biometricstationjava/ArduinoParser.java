@@ -12,27 +12,31 @@ package biometricstationjava;
 public class ArduinoParser { //als data uit arduino komt, dan beginnen we met parsen
 
     private final static String BEGINSIGN = "[";
-    private final static String ENDSIGN = "]";
     private final static String SEPERATOR = "|";
-    double data = 0;
+    private final static String SECONDSEP = "&";
+    private final static String THIRDSEP = "é";
+    //TODO: make more beginsigns and separators for the big string
+    private final static String ENDSIGN = "]";
     int heartbeat = 0;
     double tempData = 0.0;
     double acc_X = 0.0;
     double acc_Y = 0.0;
     double acc_Z = 0.0;
-    
-    
+
+    public ArduinoParser() {
+    }
    public SensorData parse(String dataString) {
         if (!isValidString(dataString)) {
             return null;
         }
         
+        tempData = Integer.parseInt(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
         //parsen en waarden toevoegen aan nieuwe variabelen + dan een sensordata object returnen. 
         //TODO:de volledige string parsen in de verschillende waarden die worden meegegeven in de variabelen
        
 
         //channel = Double.parseString(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
-        data = Integer.parseInt(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
+        
 
         return new SensorData(tempData, heartbeat, acc_X, acc_Y, acc_Z);
     }
