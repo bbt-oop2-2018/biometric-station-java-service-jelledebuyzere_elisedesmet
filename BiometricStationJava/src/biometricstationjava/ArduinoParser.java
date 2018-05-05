@@ -28,11 +28,10 @@ public class ArduinoParser { //als data uit arduino komt, dan beginnen we met pa
             return null;
         }
 
-       
         temperature = Double.parseDouble(data[0]);
         heartbeat = Integer.parseInt(data[1]);
         acc_X = Double.parseDouble(data[2]);
-        acc_Y = Double.parseDouble(data[3]); //parsen en waarden toevoegen aan nieuwe variabelen + dan een sensordata object returnen. 
+        acc_Y = Double.parseDouble(data[3]);
         acc_Z = Double.parseDouble(data[4]);
 
         return new SensorData(temperature, heartbeat, acc_X, acc_Y, acc_Z);
