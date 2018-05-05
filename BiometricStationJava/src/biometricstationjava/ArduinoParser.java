@@ -28,7 +28,7 @@ public class ArduinoParser { //als data uit arduino komt, dan beginnen we met pa
             return null;
         }
 
-        //temperature = Double.parseDouble(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
+       
         temperature = Double.parseDouble(data[0]);
         heartbeat = Integer.parseInt(data[1]);
         acc_X = Double.parseDouble(data[2]);

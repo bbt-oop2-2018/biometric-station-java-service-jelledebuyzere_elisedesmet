@@ -25,7 +25,6 @@ public class BiometricStationLogic {
 
     public BiometricStationLogic() {
         parser = new ArduinoParser();
-        //service = new Service("Jelle", "Temperature");
         receiver.setLineListener(new SerialPortLineListener() {
             @Override
             public void serialLineEvent(SerialData data) {
@@ -37,9 +36,6 @@ public class BiometricStationLogic {
                     System.out.println(parsedData.toString());
                     serviceTemp.sendMessage(parsedData.getTempData() + "");
                 }
-
-                // serviceAccel.sendMessage(parsedData.getAcc
-                //hoe kan ik dit testen?
             }
         });
     }
