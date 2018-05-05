@@ -11,12 +11,7 @@ package biometricstationjava;
  */
 public class ArduinoParser { //als data uit arduino komt, dan beginnen we met parsen
 
-    private final static char BEGINSIGN = '[';
-    private final static char SEPERATOR = '|';
-    private final static char SECONDSEP = '&';
-    private final static char THIRDSEP = 'é';
-    //TODO: make more beginsigns and separators for the big string
-    private final static char ENDSIGN = ']';
+    static final int ARRAYSIZE = 5;
     int heartbeat = 0;
     double temperature = 0.0;
     double acc_X = 0.0;
@@ -28,27 +23,28 @@ public class ArduinoParser { //als data uit arduino komt, dan beginnen we met pa
 
     public SensorData parse(String dataString) {
         System.out.println("data: " + dataString);
-//        if (!isValidString(dataString)) {
-//            //throw new 
-//            return null;
-//        }
+        String[] data = dataString.split(";");
+        if (!isValidStringArray(data)) {
+            return null;
+        }
 
-// other solution
-        //String[] data = dataString.split("|");
-        temperature = Double.parseDouble(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
-        
-        //parsen en waarden toevoegen aan nieuwe variabelen + dan een sensordata object returnen. 
-        //TODO:de volledige string parsen in de verschillende waarden die worden meegegeven in de variabelen
-        System.out.println(temperature);
+        //temperature = Double.parseDouble(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
+        temperature = Double.parseDouble(data[0]);
+        heartbeat = Integer.parseInt(data[1]);
+        acc_X = Double.parseDouble(data[2]);
+        acc_Y = Double.parseDouble(data[3]); //parsen en waarden toevoegen aan nieuwe variabelen + dan een sensordata object returnen. 
+        acc_Z = Double.parseDouble(data[4]);
 
-        //channel = Double.parseString(dataString.substring(dataString.indexOf(BEGINSIGN) + 1, dataString.indexOf(SEPERATOR)));
         return new SensorData(temperature, heartbeat, acc_X, acc_Y, acc_Z);
     }
 
-    public boolean isValidString(String dataString) {
-        return (dataString.indexOf("[") != -1
-                && dataString.indexOf("]") != -1
-                && dataString.indexOf("|") != -1); //er moeten haken enzo aanwezig zijn anders kan hij niet parsen
+    public boolean isValidStringArray(String[] data) {
+        boolean valid = true;
+        for (int i = 0; i < data.length && valid == true; i++) {
+            if (data[i].isEmpty()) {
+                valid = false;
+            }
+        }
+        return valid && data.length == ARRAYSIZE; //krijgt niet altijd juiste data door
     }
-
 }

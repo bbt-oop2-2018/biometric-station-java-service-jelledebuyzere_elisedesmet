@@ -47,8 +47,10 @@ public class SensorData {
 
     @Override
     public String toString() {
-        return "SensorData{" + "tempData=" + tempData + ", hearbeat=" + hearbeat + ", acc_X=" + acc_X + '}';
+        return "SensorData{" + "tempData=" + tempData + "°C, hearbeat=" + hearbeat + " BPM, X=" + acc_X + ", Y=" + acc_Y + ", Z=" + acc_Z + '}';
     }
+
+   
     
     
 
