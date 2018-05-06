@@ -13,16 +13,16 @@ import mqttservice.*;
  * @author jelle
  */
 public class BiometricStationLogic {
-
+    
     SerialData data;
     ArduinoParser parser;
     SensorData parsedData;
     Service serviceTemp = new Service("Jelle", "Temperature");
     Service serviceAccel = new Service("Jelle", "Accelerometer");
     Service servicePulse = new Service("Jelle", "Heartpulse");
-
+    
     SerialLineReceiver receiver = new SerialLineReceiver(0, 115200, false);
-
+    
     public BiometricStationLogic() {
         parser = new ArduinoParser();
         receiver.setLineListener(new SerialPortLineListener() {
@@ -30,11 +30,16 @@ public class BiometricStationLogic {
             public void serialLineEvent(SerialData data) {
                 String s = data.getDataAsString();
                 System.out.println("Received data from the serial port: " + data.getDataAsString());
-
+                
                 parsedData = parser.parse(s);
                 if (parsedData != null) { //data is valid
-                    System.out.println(parsedData.toString());
+                    //System.out.println(parsedData.toString()); //works
                     serviceTemp.sendMessage(parsedData.getTempData() + "");
+                    // System.out.println(parsedData.getHeartbeat()); // works
+                    servicePulse.sendMessage(parsedData.getHeartbeat() + "");
+                    //System.out.println("This is a test: " + parsedData.getAllAcc()); // works
+                    serviceAccel.sendMessage(parsedData.getAllAcc()); //json?
+                    System.out.println("Data sent to broker!");
                 }
             }
         });
