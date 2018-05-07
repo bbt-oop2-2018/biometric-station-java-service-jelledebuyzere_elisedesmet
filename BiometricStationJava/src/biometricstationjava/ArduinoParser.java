@@ -25,6 +25,7 @@ public class ArduinoParser { //als data uit arduino komt, dan beginnen we met pa
         System.out.println("data: " + dataString); //test
         String[] data = dataString.split(";");
         if (!isValidStringArray(data)) {
+            System.out.println("check");
             return null;
         }
 
