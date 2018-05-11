@@ -16,9 +16,7 @@ public class BiometricStationJava {
      *
      */
     public static void main(String[] args) {
-        //problem
         BiometricStationLogic biometricstation = new BiometricStationLogic();;
-
     }
 
 }
