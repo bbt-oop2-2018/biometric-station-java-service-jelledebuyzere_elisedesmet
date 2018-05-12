@@ -33,11 +33,10 @@ public class BiometricStationLogic {
                 
                 parsedData = parser.parse(s);
                 if (parsedData != null) { //data is valid
-                    System.out.println(parsedData.toString()); //works
+                    System.out.println(parsedData.toString()); 
                     serviceTemp.sendMessage(parsedData.getTempData() + "");
                     servicePulse.sendMessage(parsedData.getHeartbeat() + "");
-                    //System.out.println("This is a test: " + parsedData.getAllAcc()); // works
-                    serviceAccel.sendMessage(parsedData.getAllAccJSONFormat()); //json?
+                    serviceAccel.sendMessage(parsedData.getAllAcc()); 
                     System.out.println("Data sent to broker in separate channels!");
                 }
             }

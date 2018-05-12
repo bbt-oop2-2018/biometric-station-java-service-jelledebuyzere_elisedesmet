@@ -22,10 +22,9 @@ public class ArduinoParser { //als data uit arduino komt, dan beginnen we met pa
     }
 
     public SensorData parse(String dataString) {
-        //System.out.println("data: " + dataString); //test
         String[] data = dataString.split(";");
         if (!isValidStringArray(data)) {
-            System.out.println("check data, something wrong has happened!"); //test
+            System.out.println("check data, something wrong has happened!"); 
             return null;
         }
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biometricstationjava;
+package biometricstationjava;   
 
 /**
  *
@@ -33,8 +33,8 @@ public class SensorData {
         return heartbeat;
     }
     
-    public String getAllAccJSONFormat(){ // we need a json format here 
-        return getAcc_X() + "|" + getAcc_Y() + "|" + getAcc_Z();
+    public String getAllAcc(){ 
+        return getAcc_X() + ";" + getAcc_Y() + ";" + getAcc_Z();
     }
 
     public double getAcc_X() {
