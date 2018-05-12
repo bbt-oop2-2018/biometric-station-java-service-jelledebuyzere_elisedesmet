@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biometricstationjava;   
+package biometricstationjava;
 
 /**
  *
@@ -32,8 +32,8 @@ public class SensorData {
     public int getHeartbeat() {
         return heartbeat;
     }
-    
-    public String getAllAcc(){ 
+
+    public String getAllAcc() { //csv
         return getAcc_X() + ";" + getAcc_Y() + ";" + getAcc_Z();
     }
 

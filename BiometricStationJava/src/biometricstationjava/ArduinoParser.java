@@ -7,9 +7,9 @@ package biometricstationjava;
 
 /**
  *
- * @author jelle
+ * @author Jelle
  */
-public class ArduinoParser { //als data uit arduino komt, dan beginnen we met parsen
+public class ArduinoParser { 
 
     static final int ARRAYSIZE = 5;
     int heartbeat = 0;
@@ -24,7 +24,7 @@ public class ArduinoParser { //als data uit arduino komt, dan beginnen we met pa
     public SensorData parse(String dataString) {
         String[] data = dataString.split(";");
         if (!isValidStringArray(data)) {
-            System.out.println("check data, something wrong has happened!"); 
+            System.out.println("check data, something wrong has happened!");
             return null;
         }
 
