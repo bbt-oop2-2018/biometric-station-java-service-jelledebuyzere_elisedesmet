@@ -33,7 +33,7 @@ public class SensorData {
         return heartbeat;
     }
 
-    public String getAllAcc() { //csv
+    public String getAllAcc() { //CSV
         return getAcc_X() + ";" + getAcc_Y() + ";" + getAcc_Z();
     }
 
