@@ -7,7 +7,7 @@ package biometricstationjava;
 
 /**
  *
- * @author jelle
+ * @author Jelle
  */
 public class SensorData {
 
@@ -33,7 +33,7 @@ public class SensorData {
         return heartbeat;
     }
 
-    public String getAllAcc() { //CSV
+    public String getAllAcc() { //CSV format
         return getAcc_X() + ";" + getAcc_Y() + ";" + getAcc_Z();
     }
 

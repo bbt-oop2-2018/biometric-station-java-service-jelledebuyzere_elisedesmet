@@ -9,7 +9,7 @@ package biometricstationjava;
  *
  * @author Jelle
  */
-public class ArduinoParser { 
+public class ArduinoParser {
 
     static final int ARRAYSIZE = 5;
     int heartbeat = 0;
@@ -44,6 +44,6 @@ public class ArduinoParser {
                 valid = false;
             }
         }
-        return valid && data.length == ARRAYSIZE; //krijgt niet altijd juiste data door
+        return valid && data.length == ARRAYSIZE; //Krijgt niet altijd de juiste data door.
     }
 }

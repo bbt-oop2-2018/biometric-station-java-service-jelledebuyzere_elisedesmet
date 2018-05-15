@@ -7,7 +7,7 @@ package biometricstationjava;
 
 /**
  *
- * @author jelle
+ * @author Jelle
  */
 public class BiometricStationJava {
 

@@ -10,7 +10,7 @@ import mqttservice.*;
 
 /**
  *
- * @author jelle
+ * @author Jelle
  */
 public class BiometricStationLogic {
 
@@ -32,7 +32,7 @@ public class BiometricStationLogic {
                 System.out.println("Received data from the serial port: " + data.getDataAsString());
 
                 parsedData = parser.parse(s);
-                if (parsedData != null) { //data is valid
+                if (parsedData != null) { //Data is valid.
                     System.out.println(parsedData.toString());
                     serviceTemp.sendMessage(parsedData.getTempData() + "");
                     servicePulse.sendMessage(parsedData.getHeartbeat() + "");
