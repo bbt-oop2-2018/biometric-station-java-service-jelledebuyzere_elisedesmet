@@ -14,14 +14,14 @@ import mqttservice.*;
  */
 public class BiometricStationLogic {
 
-    SerialData data;
-    ArduinoParser parser;
-    SensorData parsedData;
-    Service serviceTemp = new Service("Jelle", "Temperature");
-    Service serviceAccel = new Service("Jelle", "Accelerometer");
-    Service servicePulse = new Service("Jelle", "Heartpulse");
+    public SerialData data;
+    private ArduinoParser parser;
+    private SensorData parsedData;
+    private Service serviceTemp = new Service("Jelle", "Temperature");
+    private Service serviceAccel = new Service("Jelle", "Accelerometer");
+    private Service servicePulse = new Service("Jelle", "Heartpulse");
 
-    SerialLineReceiver receiver = new SerialLineReceiver(0, 115200, false);
+    private SerialLineReceiver receiver = new SerialLineReceiver(0, 115200, false);
 
     public BiometricStationLogic() {
         parser = new ArduinoParser();

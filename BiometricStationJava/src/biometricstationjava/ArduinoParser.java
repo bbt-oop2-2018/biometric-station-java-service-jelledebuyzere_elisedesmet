@@ -11,7 +11,7 @@ package biometricstationjava;
  */
 public class ArduinoParser {
 
-    static final int ARRAYSIZE = 5;
+    private static final int ARRAYSIZE = 5;
     private int heartbeat = 0;
     private double temperature = 0.0;
     private double acc_X = 0.0;
